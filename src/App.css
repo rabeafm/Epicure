@@ -1,0 +1,57 @@
+* {
+  /* General Design Cleanup */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  /* General font Settings */
+  font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* General Text Styles */
+h1 {
+  font-size: 28px;
+  font-weight: 200;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 200;
+  letter-spacing: 1.1px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1.4px;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: 200;
+  letter-spacing: 1.1px;
+}
+
+h5 {
+  font-size: 16px;
+  font-weight: 200;
+}
+
+h6 {
+  font-size: 14px;
+  font-weight: 200;
+  letter-spacing: 0.9px;
+}
+
+p {
+  font-size: 13px;
+  font-weight: 200;
+  letter-spacing: 0.9px;
+}
