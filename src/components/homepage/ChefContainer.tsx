@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import MediaQuery from 'react-responsive';
+import ChefRestaurantsTable from './ChefRestaurantsTable';
 import ChefRestaurantsCarossel from './ChefRestaurantsCarossel';
 
 const data = [
@@ -29,7 +29,8 @@ const ChefsContainer = () => {
         </figcaption>
       </figure>
       <p>{data[0].description}</p>
-      <ChefRestaurantsCarossel />
+      <MediaQuery maxWidth={768} children={<ChefRestaurantsCarossel />} />
+      <MediaQuery minWidth={769} children={<ChefRestaurantsTable />} />
     </ChefDev>
   );
 };
@@ -38,7 +39,6 @@ export default ChefsContainer;
 
 const ChefDev = styled.div`
   margin: 60px 0;
-
   display: flex;
   flex-direction: column;
   align-items: center;

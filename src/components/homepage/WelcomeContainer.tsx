@@ -4,10 +4,10 @@ import UISearch from '../../ui/UISearch';
 const WelcomeContainer = () => {
   return (
     <WelcomeDiv>
-      <SearchDev>
+      <div>
         <h5>Epicure works with the top chef resturants in Tel Aviv</h5>
         <UISearch />
-      </SearchDev>
+      </div>
     </WelcomeDiv>
   );
 };
@@ -20,19 +20,18 @@ const WelcomeDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-`;
-
-const SearchDev = styled.div`
-  width: 90%;
-  height: 46%;
-  background-color: white;
-  opacity: 0.88;
-  padding: 0 10%;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  & > div {
+    width: 90%;
+    height: 46%;
+    background-color: white;
+    opacity: 0.88;
+    padding: 0 10%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export default WelcomeContainer;

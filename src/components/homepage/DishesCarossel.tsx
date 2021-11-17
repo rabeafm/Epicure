@@ -1,8 +1,8 @@
-import styled from 'styled-components';
-import 'slick-carousel/slick/slick-theme.css';
-import 'slick-carousel/slick/slick.css';
-import DishCard from '../dishes/DishCard';
 import Slider from 'react-slick';
+import styled from 'styled-components';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import DishCard from '../dishes/DishCard';
 
 const data = [
   {
@@ -99,19 +99,35 @@ const DishesCarossel = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 3.6,
     slidesToScroll: 3,
     responsive: [
       {
-        breakpoint: 580,
+        breakpoint: 660,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 2,
           initialSlide: 1,
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 560,
+        settings: {
+          slidesToShow: 2.6,
+          slidesToScroll: 2,
+          initialSlide: 1,
+        },
+      },
+      {
+        breakpoint: 490,
+        settings: {
+          slidesToShow: 2.1,
+          slidesToScroll: 2,
+          initialSlide: 1,
+        },
+      },
+      {
+        breakpoint: 440,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
@@ -125,14 +141,14 @@ const DishesCarossel = () => {
         },
       },
       {
-        breakpoint: 300,
+        breakpoint: 290,
         settings: {
-          slidesToShow: 1.1,
+          slidesToShow: 1.3,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 220,
+        breakpoint: 230,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -167,5 +183,8 @@ const CarosselContainer = styled.div`
   }
   h5 {
     font-weight: 400;
+  }
+  .slick-slide > div {
+    margin: 5px;
   }
 `;

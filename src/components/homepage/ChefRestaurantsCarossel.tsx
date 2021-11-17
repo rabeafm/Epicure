@@ -1,7 +1,7 @@
+import Slider from 'react-slick';
 import styled from 'styled-components';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Slider from 'react-slick';
 import RestaurantCard from '../resturants/RestaurantCard';
 
 const data = [
@@ -89,40 +89,42 @@ const ChefRestaurantsCarossel = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 3.4,
     slidesToScroll: 3,
     responsive: [
       {
-        breakpoint: 580,
+        breakpoint: 670,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 2,
           initialSlide: 1,
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 580,
+        settings: {
+          slidesToShow: 2.5,
+          slidesToScroll: 2,
+          initialSlide: 1,
+        },
+      },
+      {
+        breakpoint: 460,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 360,
+        breakpoint: 320,
         settings: {
-          slidesToShow: 1.7,
+          slidesToShow: 1.3,
           slidesToScroll: 1,
         },
       },
+
       {
-        breakpoint: 280,
-        settings: {
-          slidesToShow: 1.2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 200,
+        breakpoint: 230,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -146,7 +148,7 @@ const ChefRestaurantsCarossel = () => {
 export default ChefRestaurantsCarossel;
 
 const CarosselDev = styled.div`
-  max-width: 100vw;
+  max-width: 98vw;
   padding: 0 10px 50px;
   display: flex;
   flex-direction: column;
@@ -160,5 +162,8 @@ const CarosselDev = styled.div`
   }
   .rest-details {
     background-color: #f9f4ea;
+  }
+  .slick-slide > div {
+    margin: 5px;
   }
 `;

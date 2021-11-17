@@ -1,7 +1,5 @@
-import styled from 'styled-components';
-import { useState } from 'react';
-import RestaurantCard from '../components/resturants/RestaurantCard';
-import RestaurantsNavbar from '../layout/RestaurantsNavbar';
+import UITable from '../../ui/UITable';
+import RestaurantCard from '../resturants/RestaurantCard';
 
 const data = [
   {
@@ -83,62 +81,20 @@ const data = [
   },
 ];
 
-const Resturants = () => {
-  const [filtered, setFiltered] = useState(data);
-  const filterRestaurants = (filter: string) => {
-    if (filter === 'new') {
-      setFiltered(
-        data.filter(
-          (dat) => dat.dateOpened > new Date('Jan 01, 2020, 00:00:00')
-        )
-      );
-    } else {
-      if (filter === 'opennow') {
-        const currentdate = new Date();
-        const currenttime =
-          (currentdate.getHours() < 10
-            ? '0' + currentdate.getHours()
-            : currentdate.getHours()) +
-          ':' +
-          currentdate.getMinutes();
-        setFiltered(
-          data.filter(
-            (dat) => dat.opens < currenttime && currenttime < dat.closes
-          )
-        );
-      } else {
-        setFiltered(data);
-      }
-    }
-  };
-
+const ChefRestaurantsTable = () => {
   return (
-    <ResturantsContainer>
-      <h3>RESTURANTS</h3>
-      <RestaurantsNavbar filterRestaurants={filterRestaurants} />
-      <ResturantsCardContainer>
-        {filtered.map((restaurant: any) => (
-          <RestaurantCard {...restaurant} key={restaurant._id} />
-        ))}
-      </ResturantsCardContainer>
-    </ResturantsContainer>
+    <UITable>
+      <p>Yossi’s restaurants :</p>
+      <div className="inner">
+        {data
+          .map((dat: any) => {
+            dat.chef = '';
+            return <RestaurantCard {...dat} key={dat._id} />;
+          })
+          .slice(0, 3)}
+      </div>
+    </UITable>
   );
 };
 
-export default Resturants;
-
-const ResturantsContainer = styled.div`
-  margin: 10px 0;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const ResturantsCardContainer = styled.div`
-  margin: 5px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 13px;
-  justify-content: space-around;
-`;
+export default ChefRestaurantsTable;

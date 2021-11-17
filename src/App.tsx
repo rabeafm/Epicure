@@ -6,6 +6,7 @@ import Homepage from './pages/Homepage';
 import Footer from './layout/Footer';
 import Navbar from './layout/Navbar';
 import './App.css';
+import RestaurantPage from './components/resturants/RestaurantPage';
 
 function App() {
   return (
@@ -22,7 +23,10 @@ function App() {
       </Route>
       <Route path="/chef/:id" />
       <Route path="/dish/:id" />
-      <Route path="/restaurant/:id" />
+      <Route
+        path="/restaurant/:id"
+        render={(props) => <RestaurantPage id={props.match.params.id} />}
+      />
       <Footer />
     </Fragment>
   );

@@ -1,6 +1,4 @@
-import styled from 'styled-components';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import UITable from '../../ui/UITable';
 import RestaurantCard from '../resturants/RestaurantCard';
 
 const data = [
@@ -83,28 +81,17 @@ const data = [
   },
 ];
 
-const ResturantTable = () => {
+const RestaurantTable = () => {
   return (
-    <TableDev>
+    <UITable>
       <h6>THE POPULAR RESTAURANTS IN EPICURE:</h6>
-      <div className="resturants">
+      <div className="inner">
         {data
           .map((dat: any) => <RestaurantCard {...dat} key={dat._id} />)
           .slice(0, 3)}
       </div>
-    </TableDev>
+    </UITable>
   );
 };
 
-export default ResturantTable;
-
-const TableDev = styled.div`
-  padding: 40px 0 50px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 1px;
-  & .resturants {
-    display: flex;
-  }
-`;
+export default RestaurantTable;

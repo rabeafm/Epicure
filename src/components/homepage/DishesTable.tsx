@@ -1,6 +1,4 @@
-import styled from 'styled-components';
-import 'slick-carousel/slick/slick-theme.css';
-import 'slick-carousel/slick/slick.css';
+import UITable from '../../ui/UITable';
 import DishCard from '../dishes/DishCard';
 
 const data = [
@@ -95,31 +93,16 @@ const data = [
 
 const DishesTable = () => {
   return (
-    <TableDev>
+    <UITable>
       <h6>SIGNATURE DISH OF:</h6>
       <h5>Tiger Lilly</h5>
-      <div className="dishes">
+      <div className="inner">
         {data
           .map((dat: any) => <DishCard {...dat} key={dat._id} />)
           .slice(0, 3)}
       </div>
-    </TableDev>
+    </UITable>
   );
 };
 
 export default DishesTable;
-
-const TableDev = styled.div`
-  margin: auto;
-  padding: 40px 0 50px;
-  display: flex;
-  flex: 0;
-  align-items: center;
-  flex-direction: column;
-  gap: 20px;
-  .dishes {
-    display: flex;
-    flex: 0;
-    justify-content: center;
-  }
-`;
