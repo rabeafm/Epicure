@@ -5,11 +5,11 @@ const UICard = styled.div`
   width: 100%;
   height: 100%;
   min-width: 150px;
-  max-width: 200px;
+  max-width: 170px;
   background: #f7e0b2;
   display: flex;
   flex-direction: column;
-  flex: 1;
+  //flex: 1;
   /* Restaurant Card Design */
   .rest-details {
     padding: 24px 0;

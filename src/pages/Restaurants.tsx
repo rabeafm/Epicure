@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useState } from 'react';
-import RestaurantCard from '../components/resturants/RestaurantCard';
-import RestaurantsNavbar from '../layout/RestaurantsNavbar';
+import RestaurantCard from '../components/restaurant/RestaurantCard';
+import RestaurantsNavbar from '../components/restaurants/RestaurantsNavbar';
 
 const data = [
   {
@@ -139,6 +139,6 @@ const ResturantsCardContainer = styled.div`
   margin: 5px;
   display: flex;
   flex-wrap: wrap;
-  gap: 13px;
+  gap: 3px;
   justify-content: space-around;
 `;

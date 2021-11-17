@@ -1,5 +1,4 @@
 import UICard from '../../ui/UICard';
-import { Link } from 'react-router-dom';
 
 const DishCard = (dish: any) => {
   return (
@@ -7,7 +6,7 @@ const DishCard = (dish: any) => {
       <img
         src={process.env.REACT_APP_BASE_URL + dish.image}
         alt={dish.name}
-        style={{ objectFit: 'cover', aspectRatio: '260 / 208' }}
+        style={{ objectFit: 'cover' }}
       />
       <div className="dish-details">
         <h1>{dish.name}</h1>
@@ -20,7 +19,8 @@ const DishCard = (dish: any) => {
           width="44"
         />
         <div className="price">
-          <div className="lines"></div>₪&nbsp;<h1>{dish.price}</h1>
+          <div className="lines"></div>
+          <p>₪</p>&nbsp;<h1>{dish.price}</h1>
           <div className="lines"></div>
         </div>
       </div>

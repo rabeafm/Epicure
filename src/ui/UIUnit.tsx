@@ -1,23 +1,23 @@
 import styled from 'styled-components';
 
 const UIUnit = styled.div`
-  margin: auto;
-  padding: 40px;
-  width: 550px;
-  min-height: 500px;
-  background-color: lightgray;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  &h2 {
-    color: $DarkColor;
+  gap: 10;
+  h1 {
+    font-size: 35px;
+    font-weight: 400;
   }
-  .loginform {
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+  .resturant-display {
+    padding: 17px 5px;
+    p {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 `;
 

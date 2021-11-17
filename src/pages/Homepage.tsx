@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import MediaQuery from 'react-responsive';
-import WelcomeContainer from '../components/homepage/WelcomeContainer';
-import ButtonsContainer from '../components/homepage/ButtonsContainer';
-import RestaurantsTable from '../components/homepage/RestaurantsTable';
-import RestaurantsCarossel from '../components/homepage/RestaurantsCarossel';
-import DishesTable from '../components/homepage/DishesTable';
-import DishesCarossel from '../components/homepage/DishesCarossel';
-import IconsMeaningContainer from '../components/homepage/IconsMeaningContainer';
-import AboutUsContainer from '../components/homepage/AboutUsContainer';
-import ChefsContainer from '../components/homepage/ChefContainer';
+import WelcomeContainer from '../layout/homepage/WelcomeContainer';
+import ButtonsContainer from '../layout/homepage/ButtonsContainer';
+import RestaurantsTable from '../components/restaurants/RestaurantsTable';
+import RestaurantsCarossel from '../components/restaurants/RestaurantsCarossel';
+import DishesTable from '../components/dishes/DishesTable';
+import DishesCarossel from '../components/dishes/DishesCarossel';
+import IconsMeaningContainer from '../layout/homepage/IconsMeaningContainer';
+import AboutUsContainer from '../layout/homepage/AboutUsContainer';
+import ChefsContainer from '../components/chefs/ChefContainer';
 
 const Homepage = () => {
   return (

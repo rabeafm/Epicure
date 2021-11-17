@@ -1,16 +1,25 @@
-import Slider from 'react-slick';
-import styled from 'styled-components';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import DishCard from '../dishes/DishCard';
+import UIUnit from '../ui/UIUnit';
+import RestaurantNavbar from '../components/restaurant/RestaurantNavbar';
+import RestaurantDishes from '../components/restaurant/RestaurantDishes';
 
-const data = [
+const restaurant = {
+  _id: '1',
+  name: 'Claro',
+  chef: 'Ran Shmueli',
+  opens: '10:00',
+  closes: '22:00',
+  dateOpened: new Date('March 12, 2020, 23:10:20'),
+  thumb: 'assets/restaurants/claro.png',
+  image: 'assets/restaurants/claroBig.png',
+  dishes: [''],
+};
+const dishes = [
   {
     _id: 1,
     name: 'Pad Ki Mao',
     restaurant: 'Tiger Lilly',
     ingredients:
-      'Shrimps, Glass Noodles, Kemiri Nuts, Shallots,Lemon Grass, Magic Chili Brown Coconut',
+      'Shrimps, Glass Noodles,  Shallots,Lemon Grass, Magic Chili Brown Coconut',
     image: 'assets/dishes/pad-ki-mao.png',
     icon: 'assets/spicy-icon.png',
     price: 88,
@@ -19,6 +28,17 @@ const data = [
   },
   {
     _id: 2,
+    name: 'Garbanzo Frito',
+    restaurant: 'Kab Kem',
+    ingredients:
+      'Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa',
+    image: 'assets/dishes/garbanzo-frito.png',
+    icon: 'assets/vegan-icon.png',
+    price: 98,
+    type: 'breakfast',
+  },
+  {
+    _id: 9,
     name: 'Garbanzo Frito',
     restaurant: 'Kab Kem',
     ingredients:
@@ -94,97 +114,44 @@ const data = [
   },
 ];
 
-const DishesCarossel = () => {
-  var settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3.6,
-    slidesToScroll: 3,
-    responsive: [
-      {
-        breakpoint: 660,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 2,
-          initialSlide: 1,
-        },
-      },
-      {
-        breakpoint: 560,
-        settings: {
-          slidesToShow: 2.6,
-          slidesToScroll: 2,
-          initialSlide: 1,
-        },
-      },
-      {
-        breakpoint: 490,
-        settings: {
-          slidesToShow: 2.1,
-          slidesToScroll: 2,
-          initialSlide: 1,
-        },
-      },
-      {
-        breakpoint: 440,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 360,
-        settings: {
-          slidesToShow: 1.7,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 290,
-        settings: {
-          slidesToShow: 1.3,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 230,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
+const Restaurant = (props: any) => {
+  const time = new Date();
+  const timeString =
+    (time.getHours() < 10 ? '0' : '') +
+    time.getHours() +
+    ':' +
+    time.getMinutes();
   return (
-    <CarosselContainer>
-      <h6>SIGNATURE DISH OF :</h6>
-      <h5>Tiger Lilly</h5>
-      <Slider className="slider" {...settings}>
-        {data.map((dat: any) => (
-          <DishCard className="slide" {...dat} key={dat._id} />
-        ))}
-      </Slider>
-    </CarosselContainer>
+    <UIUnit>
+      <img
+        src={process.env.REACT_APP_BASE_URL + restaurant.image}
+        alt={restaurant.name}
+        style={{
+          objectFit: 'cover',
+          aspectRatio: '375 / 254',
+          width: '100%',
+        }}
+      />
+      <div className="resturant-display">
+        <h1>{restaurant.name}</h1>
+        <h2>{restaurant.chef}</h2>
+
+        <p>
+          <img
+            className="icon"
+            src={process.env.REACT_APP_BASE_URL + 'assets/clock-icon.png'}
+            alt={'Open now'}
+          />
+          &nbsp;
+          {timeString >= restaurant.opens && timeString <= restaurant.closes
+            ? ' Open now'
+            : ' Closed'}
+        </p>
+      </div>
+      <RestaurantNavbar />
+      <RestaurantDishes dishes={dishes} />
+    </UIUnit>
   );
 };
 
-export default DishesCarossel;
-
-const CarosselContainer = styled.div`
-  min-height: 500px;
-  max-width: 100vw;
-  margin: 40px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  & button {
-    display: none !important;
-  }
-  h5 {
-    font-weight: 400;
-  }
-  .slick-slide > div {
-    margin: 5px;
-  }
-`;
+export default Restaurant;

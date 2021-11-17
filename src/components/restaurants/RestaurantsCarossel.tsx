@@ -2,7 +2,7 @@ import Slider from 'react-slick';
 import styled from 'styled-components';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import RestaurantCard from '../resturants/RestaurantCard';
+import RestaurantCard from '../restaurant/RestaurantCard';
 
 const data = [
   {
@@ -84,7 +84,7 @@ const data = [
   },
 ];
 
-const ChefRestaurantsCarossel = () => {
+const ResturantCarossel = () => {
   var settings = {
     dots: false,
     infinite: true,
@@ -134,34 +134,27 @@ const ChefRestaurantsCarossel = () => {
   };
   return (
     <CarosselDev>
-      <p>Yossi’s restaurants :</p>
+      <h6>THE POPULAR RESTAURANTS IN EPICURE :</h6>
       <Slider {...settings}>
-        {data.map((dat: any) => {
-          dat.chef = '';
-          return <RestaurantCard {...dat} key={dat._id} />;
-        })}
+        {data.map((dat: any) => (
+          <RestaurantCard {...dat} key={dat._id} />
+        ))}
       </Slider>
     </CarosselDev>
   );
 };
 
-export default ChefRestaurantsCarossel;
+export default ResturantCarossel;
 
 const CarosselDev = styled.div`
   max-width: 98vw;
-  padding: 0 10px 50px;
+  margin: 0 0 0 10px;
+  padding: 40px 0 50px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  button {
+  gap: 20px;
+  & button {
     display: none !important;
-  }
-  p {
-    text-align: left;
-    padding: 0;
-  }
-  .rest-details {
-    background-color: #f9f4ea;
   }
   .slick-slide > div {
     margin: 5px;

@@ -1,5 +1,5 @@
 import UITable from '../../ui/UITable';
-import RestaurantCard from '../resturants/RestaurantCard';
+import RestaurantCard from '../restaurant/RestaurantCard';
 
 const data = [
   {
