@@ -8,7 +8,7 @@ import DishesTable from '../components/dishes/DishesTable';
 import DishesCarossel from '../components/dishes/DishesCarossel';
 import IconsMeaningContainer from '../layout/homepage/IconsMeaningContainer';
 import AboutUsContainer from '../layout/homepage/AboutUsContainer';
-import ChefsContainer from '../components/chefs/ChefContainer';
+import ChefsContainer from '../components/chef/ChefContainer';
 
 const Homepage = () => {
   return (

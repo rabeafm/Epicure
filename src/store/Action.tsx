@@ -1,6 +1,4 @@
 export enum ActionType {
-  CONTENT,
-  ID,
   GET_CHEFS,
   GET_CHEF,
   GET_DISHES,

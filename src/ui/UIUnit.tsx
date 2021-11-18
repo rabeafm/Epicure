@@ -19,6 +19,16 @@ const UIUnit = styled.div`
       justify-content: center;
     }
   }
+  .dish-display {
+    padding: 25px 20%;
+    h2 {
+      margin-bottom: 14px;
+      font-weight: 400;
+    }
+    h4 {
+      margin: 14px 0;
+    }
+  }
 `;
 
 export default UIUnit;

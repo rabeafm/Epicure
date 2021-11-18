@@ -1,11 +1,9 @@
 import styled from 'styled-components';
 
-const RestaurantNavbar = ({ filterRestaurants }: any) => {
+const RestaurantNavbar = () => {
   return (
     <Navbar>
-      <a>
-        <h4 className="active">Breakfast</h4>
-      </a>
+      <h4 className="active">Breakfast</h4>
       <a href="#lunch">
         <h4>Lunch</h4>
       </a>

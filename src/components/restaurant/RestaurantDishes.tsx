@@ -1,7 +1,11 @@
 import UITable from '../../ui/UITable';
-import DishCard from '../dishes/DishCard';
+import DishCard from '../dish/DishCard';
+import { useSelector } from 'react-redux';
+import { AppState } from '../../store/AppState';
 
-const RestaurantDishes = ({ dishes }: any) => {
+const RestaurantDishes = () => {
+  const dishes = useSelector((state: AppState) => state.restaurant.dishes);
+
   return (
     <UITable>
       <div className="unit">

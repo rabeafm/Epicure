@@ -6,8 +6,10 @@ import RestaurantCard from '../restaurant/RestaurantCard';
 import { useSelector } from 'react-redux';
 import { AppState } from '../../store/AppState';
 
-const ResturantCarossel = () => {
-  const restaurants = useSelector((state: AppState) => state.restaurantsArray);
+const ChefRestaurantsCarossel = () => {
+  const chef = useSelector((state: AppState) => state.chef);
+  const restaurants = useSelector((state: AppState) => state.chef.restaurants);
+  
   var settings = {
     dots: false,
     infinite: true,
@@ -57,27 +59,34 @@ const ResturantCarossel = () => {
   };
   return (
     <CarosselDev>
-      <h6>THE POPULAR RESTAURANTS IN EPICURE :</h6>
+      <p>{chef.name}’s restaurants :</p>
       <Slider {...settings}>
-        {restaurants.slice(0, 6).map((restaurant: any) => (
-          <RestaurantCard {...restaurant} key={restaurant._id} />
-        ))}
+        {restaurants.slice(0, 6).map((restaurant: any) => {
+          restaurant.chef = '';
+          return <RestaurantCard {...restaurant} key={restaurant._id} />;
+        })}
       </Slider>
     </CarosselDev>
   );
 };
 
-export default ResturantCarossel;
+export default ChefRestaurantsCarossel;
 
 const CarosselDev = styled.div`
   max-width: 98vw;
-  margin: 0 0 10px;
-  padding: 40px 0 50px;
+  padding: 0 10px 50px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  & button {
+  gap: 10px;
+  button {
     display: none !important;
+  }
+  p {
+    text-align: left;
+    padding: 0;
+  }
+  .rest-details {
+    background-color: #f9f4ea;
   }
   .slick-slide > div {
     margin: 5px;

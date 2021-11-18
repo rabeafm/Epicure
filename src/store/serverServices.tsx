@@ -12,6 +12,10 @@ class ServerServices {
       console.log(`error: `, error);
     }
   };
+
+  public getChef = async () => {
+    console.log('getChef');
+  };
 }
 
 export default ServerServices;

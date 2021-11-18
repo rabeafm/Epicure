@@ -6,7 +6,7 @@ const Menu = ({ menu, setMenu }: any) => {
     <MenuContainer menu={menu}>
       <div>
         <img
-          src={'./assets/navbar/x.png'}
+          src={process.env.REACT_APP_BASE_URL + './assets/navbar/x.png'}
           alt="Menu"
           onClick={() => setMenu(false)}
         />
@@ -18,7 +18,7 @@ const Menu = ({ menu, setMenu }: any) => {
       <NavLink to={'restaurants'} onClick={() => setMenu(false)}>
         All Resturants
       </NavLink>
-      {/* <Link>Dishes</Link> */}
+      {/* <NavLink>Dishes</NavLink> */}
       <hr />
       <div>Sign in</div>
       <div>Contact us</div>

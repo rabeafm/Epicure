@@ -2,33 +2,28 @@ import styled from 'styled-components';
 import MediaQuery from 'react-responsive';
 import ChefRestaurantsTable from './ChefRestaurantsTable';
 import ChefRestaurantsCarossel from './ChefRestaurantsCarossel';
-
-const data = [
-  {
-    name: 'Yossi Shitrit',
-    image: 'assets/chefs/shitrit.png',
-    description: `Chef Yossi Shitrit has been living and breathing his culinary dreams for
-    more than two decades, including running the kitchen in his first
-    restaurant, the fondly-remembered Violet, located in Moshav Udim.
-    Shitrit's creativity and culinary acumen born of long experience are
-    expressed in the every detail of each and every dish.`,
-  },
-];
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { AppState } from '../../store/AppState';
 
 const ChefsContainer = () => {
+  const chef = useSelector((state: AppState) => state.chef);
+
   return (
     <ChefDev>
       <h6>CHEF OF THE WEEK :</h6>
-      <figure>
-        <img
-          src={process.env.REACT_APP_BASE_URL + data[0].image}
-          alt={data[0].name}
-        />
-        <figcaption>
-          <h1>{data[0].name}</h1>
-        </figcaption>
-      </figure>
-      <p>{data[0].description}</p>
+      <Link to={'/chef/' + chef._id}>
+        <figure>
+          <img
+            src={process.env.REACT_APP_BASE_URL + chef.image}
+            alt={chef.name}
+          />
+          <figcaption>
+            <h1>{chef.name}</h1>
+          </figcaption>
+        </figure>
+      </Link>
+      <p>{chef.description}</p>
       <MediaQuery maxWidth={768} children={<ChefRestaurantsCarossel />} />
       <MediaQuery minWidth={769} children={<ChefRestaurantsTable />} />
     </ChefDev>
