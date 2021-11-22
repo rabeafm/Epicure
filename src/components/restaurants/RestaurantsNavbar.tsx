@@ -55,4 +55,11 @@ const Navbar = styled.div`
   .active {
     font-weight: 400;
   }
+  @media only screen and (min-width: 769px) {
+    justify-content: center;
+    h5 {
+      font-size: 18px;
+      margin: 0 18px;
+    }
+  }
 `;

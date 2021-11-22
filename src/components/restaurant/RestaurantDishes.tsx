@@ -13,7 +13,7 @@ const RestaurantDishes = () => {
           {dishes
             .filter((dish: any) => dish.type === 'breakfast')
             .map((dish: any) => (
-              <DishCard {...dish} key={dish._id} />
+              <DishCard className="dish" {...dish} key={dish._id} />
             ))}
         </div>
         <div id="lunch" className="seperator">

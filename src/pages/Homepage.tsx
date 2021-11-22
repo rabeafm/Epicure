@@ -14,7 +14,7 @@ const Homepage = () => {
   return (
     <HomeContainer>
       <WelcomeContainer />
-      <ButtonsContainer />
+      <MediaQuery maxWidth={768} children={<ButtonsContainer />} />
       {/* Display Resturants Mobile/Desktop */}
       <MediaQuery maxWidth={768} children={<RestaurantsCarossel />} />
       <MediaQuery minWidth={769} children={<RestaurantsTable />} />
@@ -32,6 +32,18 @@ const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media only screen and (min-width: 769px) {
+    .homepage-card-view {
+      width: 360px;
+      max-width: 26vw;
+      align-items: stretch;
+      .dish-details {
+        width: 100%;
+        align-self: center;
+      }
+    }
+  }
 `;
 
 export default Homepage;

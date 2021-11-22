@@ -60,7 +60,7 @@ export class AppState {
     name: 'Pad Ki Mao',
     restaurant: 'Tiger Lilly',
     ingredients:
-      'Shrimps, Glass Noodles, Kemiri Nuts, Shallots,Lemon Grass, Magic Chili Brown Coconut',
+      'Shrimps, Glass Noodles, Kemiri Nuts, Shallots, Lemon Grass, Magic Chili Brown Coconut',
     image: 'assets/dishes/pad-ki-mao.png',
     icon: 'assets/spicy-icon.png',
     price: 88,
@@ -85,6 +85,39 @@ export class AppState {
           'Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa',
         image: 'assets/dishes/seafood-paella.png',
         icon: 'assets/vegan-icon.png',
+        price: 98,
+        type: 'lunch',
+      },
+      {
+        _id: 12,
+        name: 'Seafood Paella',
+        restaurant: 'Kab Kem',
+        ingredients:
+          'Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa',
+        image: 'assets/dishes/seafood-paella.png',
+        icon: 'assets/vegan-icon.png',
+        price: 98,
+        type: 'lunch',
+      },
+      {
+        _id: 14,
+        name: 'Seafood Paella',
+        restaurant: 'Kab Kem',
+        ingredients:
+          'Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa',
+        image: 'assets/dishes/seafood-paella.png',
+        icon: '',
+        price: 98,
+        type: 'lunch',
+      },
+      {
+        _id: 21,
+        name: 'Seafood Paella',
+        restaurant: 'Kab Kem',
+        ingredients:
+          'Polenta fingers, veal cheek, magic chili cured lemon cream, yellow laksa',
+        image: 'assets/dishes/seafood-paella.png',
+        icon: '',
         price: 98,
         type: 'lunch',
       },

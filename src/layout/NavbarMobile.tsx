@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import UISearchSlide from '../ui/UISearchSlide';
+
 import Menu from './Menu';
 
 const Navbar = () => {
@@ -43,6 +44,7 @@ const Navbar = () => {
 
 const IconsContainer = styled.div`
   padding: 8px;
+
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;

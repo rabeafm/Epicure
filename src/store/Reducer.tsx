@@ -8,17 +8,27 @@ const reducer = (
 ): AppState => {
   const newState = { ...state };
   const serverServices = new ServerServices();
-  switch (
-    action.type
-    // case ActionType.GET_CHEFS: break;
-    // case ActionType.GET_CHEF: break;
-    // case ActionType.GET_DISHES: break;
-    // case ActionType.GET_DISH: break;
-    // case ActionType.GET_RESTURANTS: break;
-    // case ActionType.GET_RESTURANT: break;
-  ) {
+  switch (action.type) {
+    case ActionType.GET_CHEF:
+      newState.chef = serverServices.getChef(action.payload);
+      break;
+    case ActionType.GET_CHEFS:
+      newState.chefsArray = serverServices.getChefs();
+      break;
+    case ActionType.GET_DISH:
+      newState.dish = serverServices.getDish(action.payload);
+      break;
+    case ActionType.GET_DISHES:
+      newState.dishesArray = serverServices.getDishes();
+      break;
+    case ActionType.GET_RESTAURANT:
+      newState.restaurant = serverServices.getRestaurant(action.payload);
+      break;
+    case ActionType.GET_RESTAURANTS:
+      newState.restaurantsArray = serverServices.getRestaurants();
+      break;
   }
-  return newState;
+  return state;
 };
 
 export default reducer;

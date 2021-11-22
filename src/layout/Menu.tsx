@@ -12,11 +12,11 @@ const Menu = ({ menu, setMenu }: any) => {
         />
         <hr />
       </div>
-      <NavLink to={'chefs'} onClick={() => setMenu(false)}>
+      <NavLink to={'/chefs'} onClick={() => setMenu(false)}>
         Chefs
       </NavLink>
-      <NavLink to={'restaurants'} onClick={() => setMenu(false)}>
-        All Resturants
+      <NavLink to={'/restaurants'} onClick={() => setMenu(false)}>
+        All Restaurants
       </NavLink>
       {/* <NavLink>Dishes</NavLink> */}
       <hr />

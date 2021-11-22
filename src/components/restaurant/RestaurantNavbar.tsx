@@ -4,6 +4,7 @@ const RestaurantNavbar = () => {
   return (
     <Navbar>
       <h4 className="active">Breakfast</h4>
+
       <a href="#lunch">
         <h4>Lunch</h4>
       </a>
@@ -21,6 +22,13 @@ const Navbar = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+  @media only screen and (min-width: 769px) {
+    justify-content: center;
+    h4 {
+      padding: 0 15px;
+    }
+  }
+
   .active {
     border-bottom: rgba(222, 146, 0, 0.9) 1px solid;
   }

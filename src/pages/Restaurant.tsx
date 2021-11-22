@@ -1,12 +1,19 @@
 import UIUnit from '../ui/UIUnit';
+import { useEffect } from 'react';
+import { AppState } from '../store/AppState';
+import { ActionType } from '../store/Action';
+import { useSelector, useDispatch } from 'react-redux';
 import RestaurantNavbar from '../components/restaurant/RestaurantNavbar';
 import RestaurantDishes from '../components/restaurant/RestaurantDishes';
-import { useSelector } from 'react-redux';
-import { AppState } from '../store/AppState';
 
 const Restaurant = (props: any) => {
   const restaurant = useSelector((state: AppState) => state.restaurant);
-  console.log(props);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({ type: ActionType.GET_RESTAURANT, payload: props.id });
+    // eslint-disable-next-line
+  }, []);
 
   const time = new Date();
   const timeString =

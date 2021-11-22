@@ -19,5 +19,13 @@ const FooterContainer = styled.div`
   font-size: 12px;
   font-weight: 200;
   box-shadow: 0 -1px 2px 0 rgba(0, 0, 0, 0.05);
+  @media only screen and (min-width: 769px) {
+    flex-direction: row;
+    justify-content: center;
+    font-size: 18px;
+    div {
+      padding: 0 22px;
+    }
+  }
 `;
 export default Footer;

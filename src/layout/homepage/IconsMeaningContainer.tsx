@@ -48,6 +48,12 @@ const IconsContainer = styled.div`
   @media only screen and (max-width: 280px) {
     gap: 10px;
   }
+  @media only screen and (min-width: 769px) {
+    gap: 100px;
+    img {
+      width: 70px;
+    }
+  }
   div {
     height: 70%;
     display: flex;

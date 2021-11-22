@@ -1,10 +1,10 @@
 export enum ActionType {
-  GET_CHEFS,
   GET_CHEF,
-  GET_DISHES,
+  GET_CHEFS,
   GET_DISH,
-  GET_RESTURANTS,
-  GET_RESTURANT,
+  GET_DISHES,
+  GET_RESTAURANT,
+  GET_RESTAURANTS,
 }
 
 export interface Action {

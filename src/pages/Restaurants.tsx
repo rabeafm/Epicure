@@ -1,13 +1,21 @@
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { AppState } from '../store/AppState';
+import { ActionType } from '../store/Action';
+import { useSelector, useDispatch } from 'react-redux';
 import RestaurantCard from '../components/restaurant/RestaurantCard';
 import RestaurantsNavbar from '../components/restaurants/RestaurantsNavbar';
-import { useSelector } from 'react-redux';
-import { AppState } from '../store/AppState';
 
 const Resturants = () => {
   const restaurants = useSelector((state: AppState) => state.restaurantsArray);
   const [filtered, setFiltered] = useState(restaurants);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({ type: ActionType.GET_RESTAURANTS });
+    // eslint-disable-next-line
+  }, []);
+
   const filterRestaurants = (filter: string) => {
     if (filter === 'new') {
       setFiltered(
@@ -38,32 +46,45 @@ const Resturants = () => {
   };
 
   return (
-    <ResturantsContainer>
-      <h3>RESTURANTS</h3>
+    <RestaurantsContainer>
+      <h3 className="restaurants-title">RESTAURANTS</h3>
       <RestaurantsNavbar filterRestaurants={filterRestaurants} />
-      <ResturantsCardContainer>
+      <RestaurantsCardContainer>
         {filtered.map((restaurant: any) => (
           <RestaurantCard {...restaurant} key={restaurant._id} />
         ))}
-      </ResturantsCardContainer>
-    </ResturantsContainer>
+      </RestaurantsCardContainer>
+    </RestaurantsContainer>
   );
 };
 
 export default Resturants;
 
-const ResturantsContainer = styled.div`
-  margin: 10px 0;
+const RestaurantsContainer = styled.div`
+  margin: 10px auto;
   width: 100%;
+  max-width: 1100px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media only screen and (min-width: 769px) {
+    .restaurants-title {
+      display: none;
+    }
+    margin-top: 30px;
+  }
 `;
 
-const ResturantsCardContainer = styled.div`
+const RestaurantsCardContainer = styled.div`
   margin: 5px;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 3px;
-  justify-content: space-around;
+  gap: 40px;
+  justify-content: space-evenly;
+  @media only screen and (min-width: 769px) {
+    margin-top: 30px;
+    justify-content: space-evenly !important;
+    gap: 40px;
+  }
 `;

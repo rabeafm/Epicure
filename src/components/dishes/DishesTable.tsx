@@ -8,11 +8,13 @@ const DishesTable = () => {
 
   return (
     <UITable>
-      <h6>SIGNATURE DISH OF:</h6>
-      <h5>Tiger Lilly</h5>
+      <h3>SIGNATURE DISH OF:</h3>
       <div className="inner">
         {dishes.slice(0, 3).map((dish: any) => (
-          <DishCard {...dish} key={dish._id} />
+          <div key={dish._id}>
+            <h3>{dish.restaurant}</h3>
+            <DishCard {...dish} key={dish._id} />
+          </div>
         ))}
       </div>
     </UITable>

@@ -73,10 +73,12 @@ const DishesCarossel = () => {
   return (
     <CarosselContainer>
       <h6>SIGNATURE DISH OF :</h6>
-      <h5>Tiger Lilly</h5>
       <Slider className="slider" {...settings}>
         {dishes.slice(0, 6).map((dish: any) => (
-          <DishCard className="slide" {...dish} key={dish._id} />
+          <div>
+            <h5>{dish.restaurant}</h5>
+            <DishCard className="slide" {...dish} key={dish._id} />
+          </div>
         ))}
       </Slider>
     </CarosselContainer>

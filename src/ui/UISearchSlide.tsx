@@ -26,7 +26,9 @@ export default UISearchSlide;
 const SearchDiv = styled.div`
   margin: 0 5px;
   input {
-    background: url('./assets/navbar/search.svg') left no-repeat;
+    background: url('${process.env
+        .REACT_APP_BASE_URL}/assets/navbar/mini-search-icon.svg')
+      left no-repeat;
     padding-left: 20px;
     width: 16px;
     height: 20px;

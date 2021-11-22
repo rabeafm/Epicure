@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 const UIUnit = styled.div`
   width: 100%;
+  margin: 0 auto;
+  max-width: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,16 +19,6 @@ const UIUnit = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-  }
-  .dish-display {
-    padding: 25px 20%;
-    h2 {
-      margin-bottom: 14px;
-      font-weight: 400;
-    }
-    h4 {
-      margin: 14px 0;
     }
   }
 `;
