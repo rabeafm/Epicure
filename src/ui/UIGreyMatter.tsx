@@ -1,29 +1,31 @@
 import styled from 'styled-components';
 
 const UIGreyMatter = styled.div`
-  // Element Attributes
+  // Mobile Design
   margin-bottom: 40px;
-
+  padding: 15px 0;
   width: 100%;
-  padding: 0 12%;
-  z-index: 2;
   background-color: #fafafa;
-
-  // Content Behaviour
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  @media only screen and (max-width: 260px) {
-    flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  p {
+    margin-top: 10px;
   }
+
   @media only screen and (min-width: 769px) {
-    margin: 90px 0;
-    min-height: 260px;
+    margin: 70px 0;
+    padding: 25px 0;
+
+    // Icons Meaning & About Us Headers
     h6 {
       font-size: 27px;
     }
     p {
       font-size: 25px;
+      margin-top: 25px;
     }
   }
 `;

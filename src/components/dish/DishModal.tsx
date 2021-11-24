@@ -25,12 +25,27 @@ const ModalOverlay = (props: any) => {
         />
         <div className="dish-display">
           <h2>{props.dish.name}</h2>
-          <h4>{props.dish.ingredients}</h4>
-          <img
-            className="icon"
-            src={process.env.REACT_APP_BASE_URL + props.dish.icon}
-            alt={'Open now'}
-          />
+          <h4>
+            {props.dish.ingredients.map((ing: string, i: number) =>
+              i < props.dish.ingredients.length - 2
+                ? ing + ', '
+                : i === props.dish.ingredients.length - 2 &&
+                  ing +
+                    ' & ' +
+                    props.dish.ingredients[props.dish.ingredients.length - 1]
+            )}
+          </h4>
+          <div>
+            {props.dish.icons.length > 0 &&
+              props.dish.icons.map((icon: string) => (
+                <img
+                  key={icon}
+                  className="icon"
+                  src={process.env.REACT_APP_BASE_URL + icon}
+                  alt={props.dish.name}
+                />
+              ))}
+          </div>
           <div className="price">
             <div className="lines"></div>
             <p>₪</p>&nbsp;<h3>{props.dish.price}</h3>

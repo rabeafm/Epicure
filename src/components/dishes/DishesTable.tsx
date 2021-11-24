@@ -12,7 +12,7 @@ const DishesTable = () => {
       <div className="inner">
         {dishes.slice(0, 3).map((dish: any) => (
           <div key={dish._id}>
-            <h3>{dish.restaurant}</h3>
+            <h3>{dish.restaurant.name}</h3>
             <DishCard {...dish} key={dish._id} />
           </div>
         ))}

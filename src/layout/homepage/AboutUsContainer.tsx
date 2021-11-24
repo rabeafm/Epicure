@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+import UIGreyMatter from '../../ui/UIGreyMatter';
 
 const AboutUsContainer = () => {
   return (
-    <AboutContainer>
-      <div className="about-us-layout">
-        <span>ABOUT US :</span>
+    <UIGreyMatter>
+      <AboutContainer>
+        <h6>ABOUT US :</h6>
         <div className="about-us">
           <div>
             <p>
@@ -46,66 +47,42 @@ const AboutUsContainer = () => {
             </div>
           </div>
         </div>
-      </div>
-    </AboutContainer>
+      </AboutContainer>
+    </UIGreyMatter>
   );
 };
 
 export default AboutUsContainer;
 
 const AboutContainer = styled.div`
-  // Element Attributes
-  width: 100%;
-  padding: 30px 13%;
-  z-index: 2;
-  background-color: #fafafa;
+  // Mobile Design
+  padding: 10px 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 10px;
 
-  // Content Behaviour
-  .about-us-layout {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-    justify-content: space-evenly;
+  p {
+    margin: 0;
+    padding-bottom: 10px;
+    font-size: 14px;
   }
-
   .epicure-logo {
-    padding: 20px 20px 10px;
+    padding: 20px;
     width: 200px;
   }
-  // Text behaviour
-  span {
-    text-align: center;
-    font-size: 16px;
-    font-weight: 200;
-  }
-
-  & p {
-    padding: 10px;
-    text-align: center;
-    font-size: 14px;
-    font-weight: 200;
-  }
-
   .download {
     display: flex;
     @media only screen and (max-width: 325px) {
       flex-direction: column;
     }
+    gap: 10px;
     .button {
-      margin: 5px;
       padding: 5px 10px;
       border: 0.5px solid black;
       border-radius: 7px;
       display: flex;
-
-      text-align: center;
-      & img {
-        margin-right: 5px;
-      }
+      gap: 10px;
       .line {
         font-size: 9px;
       }
@@ -115,51 +92,35 @@ const AboutContainer = styled.div`
     }
   }
 
+  // Desktop Design
   @media only screen and (min-width: 769px) {
-    & span {
-      text-align: left;
-      font-size: 30px;
-      font-weight: 200;
-    }
+    padding: 0 10px;
+    width: 100%;
+    max-width: 900px;
+    align-items: start;
 
-    .about-us-layout {
-      margin: 0 auto;
-      width: 100%;
-      max-width: 1000px;
-      display: flex;
-      flex-direction: column;
-      align-items: start;
-    }
     .about-us {
-      width: 90%;
+      width: 95%;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0px 0;
-      & p {
+      p {
         max-width: 530px;
         text-align: left;
         font-size: 20px;
-        font-weight: 200;
-      }
-      .epicure-logo {
-        width: 220px;
       }
     }
     .download {
-      display: flex;
-      margin-left: 90px;
-      align-items: start;
-      justify-content: start;
-      & img {
-        margin-right: 5px;
+      img {
         width: 25px;
       }
-      .line {
-        font-size: 13px !important;
-      }
-      .marka {
-        font-size: 16px !important;
+      .button {
+        .line {
+          font-size: 13px;
+        }
+        .marka {
+          font-size: 16px;
+        }
       }
     }
   }

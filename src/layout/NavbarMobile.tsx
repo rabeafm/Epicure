@@ -14,6 +14,7 @@ const Navbar = () => {
         <img
           src={process.env.REACT_APP_BASE_URL + 'assets/navbar/burger.svg'}
           alt="Menu"
+          style={{ width: '20px', height: '20px' }}
           onClick={() => setMenu(true)}
         />
         <NavLink to={'/'} className="logo">
@@ -22,18 +23,20 @@ const Navbar = () => {
             alt="Epicure"
           />
         </NavLink>
-        <div>
+        <div style={{ marginTop: '7px' }}>
           <UISearchSlide />
           <NavLink to={'/user'}>
             <img
               src={process.env.REACT_APP_BASE_URL + 'assets/navbar/user.svg'}
               alt="User"
+              style={{ width: '20px', height: '20px' }}
             />
           </NavLink>
           <NavLink to={'/cart'}>
             <img
               src={process.env.REACT_APP_BASE_URL + 'assets/navbar/cart.svg'}
               alt="Cart"
+              style={{ width: '20px', height: '20px' }}
             />
           </NavLink>
         </div>
@@ -52,6 +55,10 @@ const IconsContainer = styled.div`
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   .logo {
     margin-left: 45px;
+    img {
+      max-width: 24px;
+      max-height: 24px;
+    }
     @media only screen and (max-width: 230px) {
       margin-left: 25px;
     }

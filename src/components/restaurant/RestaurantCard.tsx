@@ -17,9 +17,10 @@ const RestaurantCard = (restaurant: any) => {
           alt={restaurant.name}
           className="image"
         />
+
         <div className="rest-details">
           <h2>{restaurant.name}</h2>
-          <h3>{restaurant.chef}</h3>
+          <h3>{restaurant.chef.name}</h3>
         </div>
       </Link>
     </UICard>

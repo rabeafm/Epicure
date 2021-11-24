@@ -1,34 +1,29 @@
 import { Action, ActionType } from './Action';
 import { AppState } from './AppState';
-import ServerServices from './serverServices';
 
 const reducer = (
   state: AppState = new AppState(),
   action: Action
 ): AppState => {
   const newState = { ...state };
-  const serverServices = new ServerServices();
   switch (action.type) {
-    case ActionType.GET_CHEF:
-      newState.chef = serverServices.getChef(action.payload);
+    case ActionType.SET_CHEF:
+      newState.chef = action.payload;
       break;
-    case ActionType.GET_CHEFS:
-      newState.chefsArray = serverServices.getChefs();
+    case ActionType.SET_CHEFS:
+      newState.chefsArray = action.payload;
       break;
-    case ActionType.GET_DISH:
-      newState.dish = serverServices.getDish(action.payload);
+    case ActionType.SET_DISHES:
+      newState.dishesArray = action.payload;
       break;
-    case ActionType.GET_DISHES:
-      newState.dishesArray = serverServices.getDishes();
+    case ActionType.SET_RESTAURANT:
+      newState.restaurant = action.payload;
       break;
-    case ActionType.GET_RESTAURANT:
-      newState.restaurant = serverServices.getRestaurant(action.payload);
-      break;
-    case ActionType.GET_RESTAURANTS:
-      newState.restaurantsArray = serverServices.getRestaurants();
+    case ActionType.SET_RESTAURANTS:
+      newState.restaurantsArray = action.payload;
       break;
   }
-  return state;
+  return newState;
 };
 
 export default reducer;

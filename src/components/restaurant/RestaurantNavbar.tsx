@@ -1,16 +1,32 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
-const RestaurantNavbar = () => {
+const RestaurantNavbar = (props: any) => {
   return (
     <Navbar>
-      <h4 className="active">Breakfast</h4>
-
-      <a href="#lunch">
-        <h4>Lunch</h4>
-      </a>
-      <a href="#dinner">
-        <h4>Dinner</h4>
-      </a>
+      <h4>
+        <NavLink to={'/restaurant/' + props.id} exact activeClassName="active">
+          Breakfast
+        </NavLink>
+      </h4>
+      <h4>
+        <NavLink
+          to={'/restaurant/' + props.id + '/lunch'}
+          exact
+          activeClassName="active"
+        >
+          Lunch
+        </NavLink>
+      </h4>
+      <h4>
+        <NavLink
+          to={'/restaurant/' + props.id + '/dinner'}
+          exact
+          activeClassName="active"
+        >
+          Dinner
+        </NavLink>
+      </h4>
     </Navbar>
   );
 };
@@ -28,7 +44,6 @@ const Navbar = styled.div`
       padding: 0 15px;
     }
   }
-
   .active {
     border-bottom: rgba(222, 146, 0, 0.9) 1px solid;
   }

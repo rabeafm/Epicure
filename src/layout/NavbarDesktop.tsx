@@ -6,8 +6,8 @@ const Navbar = () => {
   return (
     <>
       <IconsContainer>
-        <div className="left">
-          <Link to={'/'} className="logo">
+        <div className="left-nav">
+          <Link to={'/'} className="navbar-logo">
             <img
               src={process.env.REACT_APP_BASE_URL + 'assets/navbar/logo.png'}
               alt="Epicure"
@@ -21,7 +21,7 @@ const Navbar = () => {
             <h6>Chefs</h6>
           </NavLink>
         </div>
-        <div className="right">
+        <div className="right-nav">
           <UISearch />
           <NavLink to={'/user'}>
             <img
@@ -45,40 +45,39 @@ const IconsContainer = styled.div`
   margin: 0 auto;
   max-width: 1100px;
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
+  flex-wrap: nowrap;
   align-items: center;
+  justify-content: space-between;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-
-  .left{
+  .left-nav {
     display: flex;
     align-items: center;
-    gap: 10px;
-    .logo {
+    gap: 30px;
+    .navbar-logo {
       display: flex;
       align-items: center;
-      gap 15px;
-      padding-right: 10px;
-    }
-    h6 {
-      margin-top: 5px;
-      padding: 10px;
+      gap: 15px;
+      img {
+        max-width: 28px;
+        max-height: 28px;
+      }
     }
     .active {
       border-bottom: rgba(222, 146, 0, 0.9) 1px solid;
     }
   }
-  .right{
+  .right-nav {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 28px;
     img {
-      margin-top: 3px;
+      margin-top: 4px;
     }
     .searchbox-input {
       width: 400px;
-      background: url('${process.env.REACT_APP_BASE_URL}/assets/navbar/mini-search-icon.svg')
-      left no-repeat;
+      background: url('${process.env
+          .REACT_APP_BASE_URL}/assets/navbar/mini-search-icon.svg')
+        left no-repeat;
       background-position: 97%;
       padding: 15px 8px 14px 15px;
       @media only screen and (max-width: 870px) {

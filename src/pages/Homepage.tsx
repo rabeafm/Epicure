@@ -9,18 +9,32 @@ import DishesCarossel from '../components/dishes/DishesCarossel';
 import IconsMeaningContainer from '../layout/homepage/IconsMeaningContainer';
 import AboutUsContainer from '../layout/homepage/AboutUsContainer';
 import ChefsContainer from '../components/chef/ChefContainer';
+import { useSelector } from 'react-redux';
+import { AppState } from '../store/AppState';
 
 const Homepage = () => {
+  const dishes = useSelector((state: AppState) => state.dishesArray);
+  const restaurants = useSelector((state: AppState) => state.restaurantsArray);
+
   return (
     <HomeContainer>
       <WelcomeContainer />
       <MediaQuery maxWidth={768} children={<ButtonsContainer />} />
       {/* Display Resturants Mobile/Desktop */}
-      <MediaQuery maxWidth={768} children={<RestaurantsCarossel />} />
-      <MediaQuery minWidth={769} children={<RestaurantsTable />} />
+      {restaurants.length > 0 && (
+        <>
+          <MediaQuery maxWidth={768} children={<RestaurantsCarossel />} />
+          <MediaQuery minWidth={769} children={<RestaurantsTable />} />
+        </>
+      )}
+
       {/* Display Dishes Mobile/Desktop */}
-      <MediaQuery maxWidth={768} children={<DishesCarossel />} />
-      <MediaQuery minWidth={769} children={<DishesTable />} />
+      {dishes.length > 0 && (
+        <>
+          <MediaQuery maxWidth={768} children={<DishesCarossel />} />
+          <MediaQuery minWidth={769} children={<DishesTable />} />
+        </>
+      )}
       <IconsMeaningContainer />
       <ChefsContainer />
       <AboutUsContainer />

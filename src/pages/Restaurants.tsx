@@ -1,27 +1,24 @@
 import styled from 'styled-components';
+import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { AppState } from '../store/AppState';
-import { ActionType } from '../store/Action';
-import { useSelector, useDispatch } from 'react-redux';
 import RestaurantCard from '../components/restaurant/RestaurantCard';
 import RestaurantsNavbar from '../components/restaurants/RestaurantsNavbar';
 
 const Resturants = () => {
   const restaurants = useSelector((state: AppState) => state.restaurantsArray);
   const [filtered, setFiltered] = useState(restaurants);
-  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch({ type: ActionType.GET_RESTAURANTS });
-    // eslint-disable-next-line
-  }, []);
+    setFiltered(restaurants);
+  }, [restaurants]);
 
   const filterRestaurants = (filter: string) => {
     if (filter === 'new') {
       setFiltered(
         restaurants.filter(
-          (restaurant) =>
-            restaurant.dateOpened > new Date('Jan 01, 2020, 00:00:00')
+          (restaurant: any) =>
+            new Date(restaurant.dateOpened) > new Date('Jan 01, 2020, 00:00:00')
         )
       );
     } else {
@@ -35,7 +32,7 @@ const Resturants = () => {
           currentdate.getMinutes();
         setFiltered(
           restaurants.filter(
-            (restaurant) =>
+            (restaurant: any) =>
               restaurant.opens < currenttime && currenttime < restaurant.closes
           )
         );
@@ -76,15 +73,16 @@ const RestaurantsContainer = styled.div`
 `;
 
 const RestaurantsCardContainer = styled.div`
-  margin: 5px;
+  margin-left: 10px;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
-  justify-content: space-evenly;
+  flex: 1;
+  gap: 5px;
+  justify-content: start;
   @media only screen and (min-width: 769px) {
     margin-top: 30px;
-    justify-content: space-evenly !important;
+    justify-content: start !important;
     gap: 40px;
   }
 `;

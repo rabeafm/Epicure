@@ -8,7 +8,6 @@ import { AppState } from '../../store/AppState';
 
 const DishesCarossel = () => {
   const dishes = useSelector((state: AppState) => state.dishesArray);
-
   var settings = {
     dots: false,
     infinite: true,
@@ -75,8 +74,8 @@ const DishesCarossel = () => {
       <h6>SIGNATURE DISH OF :</h6>
       <Slider className="slider" {...settings}>
         {dishes.slice(0, 6).map((dish: any) => (
-          <div>
-            <h5>{dish.restaurant}</h5>
+          <div key={dish._id}>
+            <h5>{dish.restaurant.name}</h5>
             <DishCard className="slide" {...dish} key={dish._id} />
           </div>
         ))}

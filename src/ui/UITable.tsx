@@ -1,42 +1,23 @@
 import styled from 'styled-components';
 
 const UITable = styled.div`
-  max-width: 1100px;
-  width: 100%;
-  padding: 50px 0 50px;
+padding: 50px 0 50px;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 20px;
+max-width: 1100px;
+.inner {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-
-  .inner {
-    display: flex;
     gap: 10px;
-  }
-  @media only screen and (min-width: 769px) {
-    h4 {
-      font-weight: 400;
-    }
-    .chefsrest {
-      align-self: start !important;
-    }
-  }
-    .inner {
-      > div > h3 {
-        margin: 15px;
-        font-weight: 400;
-      }
-      h4 {
-        font-weight: 200;
-      }
-    }
   }
 
   .unit {
-    width: 100%
+    width: 91%;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    gap: 20px;
     h1 {
       font-size: 15px;
     }
@@ -54,12 +35,12 @@ const UITable = styled.div`
       padding: 5px;
       display: flex;
       flex-flow: wrap;
-      width: 100%;
-      justify-content: space-evenly;
-      row-gap: 10px;
+      justify-content: start;
+      gap: 10px;
       
       & > div {
         max-width: 145px;
+        flex: 1
         .dish-details {
           background-color: #f9f4ea;
           padding: 10px 7px;
@@ -84,7 +65,27 @@ const UITable = styled.div`
       }
     }
   }
+
   @media only screen and (min-width: 769px) {
+    h4 {
+      font-weight: 400;
+    }
+    .chefsrest {
+      align-self: start !important;
+    }
+  
+    .inner {
+      > div > h3 {
+        margin: 15px;
+        font-weight: 400;
+      }
+      h4 {
+        font-weight: 200;
+      }
+      max-width: 1100px;
+      align-self: center !important;
+    }
+  
     .unit{ 
       width: 100%;
     .meals {
@@ -110,6 +111,14 @@ const UITable = styled.div`
       }
       }
     }}}
+    .chefsrest {
+      max-width: 900px;
+      padding-left: 5px;
+    }
+    .chefs-restaurant {
+      max-width: 900px;
+      justify-self: center;
+    }
   }
 `;
 

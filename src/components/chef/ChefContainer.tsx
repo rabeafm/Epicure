@@ -9,7 +9,7 @@ import { AppState } from '../../store/AppState';
 const ChefsContainer = () => {
   const chef = useSelector((state: AppState) => state.chef);
 
-  return (
+  return chef ? (
     <ChefDev>
       <h6>CHEF OF THE WEEK :</h6>
       <div className="chef">
@@ -26,12 +26,14 @@ const ChefsContainer = () => {
         </Link>
 
         <div>
-          <p>{chef.description}</p>
+          <p>{chef.descr}</p>
         </div>
       </div>
       <MediaQuery maxWidth={768} children={<ChefRestaurantsCarossel />} />
       <MediaQuery minWidth={769} children={<ChefRestaurantsTable />} />
     </ChefDev>
+  ) : (
+    <></>
   );
 };
 

@@ -77,6 +77,7 @@ const UICard = styled.div`
       opacity: 0.8;
     }
     .icon {
+      display: inline;
       height: 34px;
       width: 44px;}
     .price {

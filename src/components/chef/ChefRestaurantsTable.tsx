@@ -4,13 +4,12 @@ import { useSelector } from 'react-redux';
 import { AppState } from '../../store/AppState';
 
 const ChefRestaurantsTable = () => {
-  const restaurants = useSelector((state: AppState) => state.chef.restaurants);
-
+  const chef = useSelector((state: AppState) => state.chef);
   return (
     <UITable>
-      <h3 className="chefsrest">Yossi’s restaurants :</h3>
+      <h3 className="chefsrest">{chef.name.split(' ')[0]}’s restaurants :</h3>
       <div className="inner chefs-restaurant">
-        {restaurants.slice(0, 3).map((restaurant: any) => {
+        {chef.rests.slice(0, 3).map((restaurant: any) => {
           restaurant.chef = '';
           return <RestaurantCard {...restaurant} key={restaurant._id} />;
         })}

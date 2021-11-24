@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 const ButtonsContainer = () => {
   return (
-    <UIGreyMatter style={{ height: 125 }}>
+    <UIGreyMatter style={{ height: 125, flexDirection: 'row' }}>
       <NavLink to="/chefs" exact>
         <UIButton>CHEFS</UIButton>
       </NavLink>

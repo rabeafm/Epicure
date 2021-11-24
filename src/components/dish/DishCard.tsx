@@ -16,14 +16,24 @@ const DishCard = (dish: any) => {
         />
         <div className="dish-details">
           <h1>{dish.name}</h1>
-          <h4>{dish.ingredients}</h4>
-          {dish.icon !== '' && (
-            <img
-              className="icon"
-              src={process.env.REACT_APP_BASE_URL + dish.icon}
-              alt={dish.name}
-            />
-          )}
+          <h4>
+            {dish.ingredients.map((ing: string, i: number) =>
+              i < dish.ingredients.length - 2
+                ? ing + ', '
+                : i === dish.ingredients.length - 2 && ing + ' & ' + dish.ingredients[dish.ingredients.length - 1]
+            )}
+          </h4>
+          <div>
+            {dish.icons.length > 0 &&
+              dish.icons.map((icon: string) => (
+                <img
+                  key={icon}
+                  className="icon"
+                  src={process.env.REACT_APP_BASE_URL + icon}
+                  alt={dish.name}
+                />
+              ))}
+          </div>
           <div className="price">
             <div className="lines"></div>
             <p>₪</p>&nbsp;<h1>{dish.price}</h1>

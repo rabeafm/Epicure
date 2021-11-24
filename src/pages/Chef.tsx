@@ -8,7 +8,7 @@ const Chef = (props: any) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch({ type: ActionType.GET_CHEF, payload: props.id });
+    dispatch({ type: ActionType.SET_CHEF, payload: props.id });
     // eslint-disable-next-line
   }, []);
 

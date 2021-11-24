@@ -8,7 +8,7 @@ const Chefs = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch({ type: ActionType.GET_CHEFS });
+    dispatch({ type: ActionType.SET_CHEFS });
     // eslint-disable-next-line
   }, []);
 

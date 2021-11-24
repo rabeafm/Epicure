@@ -13,36 +13,38 @@ const WelcomeContainer = () => {
 };
 
 const WelcomeDiv = styled.div`
+  // Mobile Design
   width: 100%;
   height: 269px;
   background: url('${process.env.REACT_APP_BASE_URL}/assets/welcome.png') center
     center/ cover;
-  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  @media only screen and (min-width: 768px) {
-    height: 70vh;
-    margin-bottom: 90px;
-  }
   .search-div {
-    width: 90%;
-    height: 120px;
-    background-color: white;
-    opacity: 0.88;
-    padding: 0 30px;
-    z-index: 2;
+    padding-top: 10px;
+    width: 87%;
+    height: 125px;
+    background-color: rgba(255, 255, 255, 0.88);
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    @media only screen and (min-width: 768px) {
+    justify-content: center;
+    h5 {
+      max-width: 60%;
+    }
+  }
+
+  // Desktop Design
+  @media only screen and (min-width: 769px) {
+    height: 70vh;
+    margin-bottom: 60px;
+    .search-div {
       height: 222px;
-      padding: 0 130px;
-      max-width: 696px;
-      max-height: 222px;
+      padding: 0 100px;
+      max-width: 700px;
       h5 {
-        max-width: 439px;
+        max-width: 80%;
         font-size: 35px;
       }
     }

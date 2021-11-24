@@ -8,8 +8,7 @@ import { AppState } from '../../store/AppState';
 
 const ChefRestaurantsCarossel = () => {
   const chef = useSelector((state: AppState) => state.chef);
-  const restaurants = useSelector((state: AppState) => state.chef.restaurants);
-  
+
   var settings = {
     dots: false,
     infinite: true,
@@ -61,7 +60,7 @@ const ChefRestaurantsCarossel = () => {
     <CarosselDev>
       <p>{chef.name}’s restaurants :</p>
       <Slider {...settings}>
-        {restaurants.slice(0, 6).map((restaurant: any) => {
+        {chef.rests.slice(0, 6).map((restaurant: any) => {
           restaurant.chef = '';
           return <RestaurantCard {...restaurant} key={restaurant._id} />;
         })}

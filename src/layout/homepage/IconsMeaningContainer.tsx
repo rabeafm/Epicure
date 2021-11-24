@@ -3,9 +3,7 @@ import UIGreyMatter from '../../ui/UIGreyMatter';
 
 const IconsMeaningContainer = () => {
   return (
-    <UIGreyMatter
-      style={{ height: 134, flexDirection: 'column', padding: '10px 0' }}
-    >
+    <UIGreyMatter>
       <h6>THE MEANING OF OUR ICONS :</h6>
       <IconsContainer>
         <div>
@@ -32,33 +30,29 @@ const IconsMeaningContainer = () => {
 export default IconsMeaningContainer;
 
 const IconsContainer = styled.div`
-  width: 100%;
-  height: 70%;
+  // Mobile Design
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 60px;
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
   @media only screen and (max-width: 480px) {
     gap: 40px;
   }
-  @media only screen and (max-width: 320px) {
-    gap: 30px;
-  }
   @media only screen and (max-width: 280px) {
-    gap: 10px;
+    gap: 20px;
   }
+
+  // Desktop Design
   @media only screen and (min-width: 769px) {
     gap: 100px;
     img {
       width: 70px;
     }
-  }
-  div {
-    height: 70%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
   }
 `;
