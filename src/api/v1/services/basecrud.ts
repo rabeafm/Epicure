@@ -7,7 +7,7 @@ class BaseCRUD {
     this.model = mod;
   }
 
-  public async getAll() {
+  public async getAll(req: any) {
     return await this.model.find();
   }
   public async get({ params: { id } }: Request) {

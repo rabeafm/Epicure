@@ -14,8 +14,9 @@ class AdminRoutes {
   private initializeRoutes() {
     const authctrl = new AuthCtrl();
     const v1AdminRoutes = new V1AdminRoutes();
+
     this.router.use('/auth', authctrl.router);
-    this.router.all('*', protect);
+    //this.router.all('*', protect);
     this.router.use('/v1', v1AdminRoutes.router);
   }
 }

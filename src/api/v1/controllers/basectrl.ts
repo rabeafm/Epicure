@@ -22,9 +22,9 @@ class BaseCtrl {
   protected initializeRoutes() {
     this.router.get('/', this.getAll.bind(this));
     this.router.get('/:id', this.get.bind(this));
-    this.router.post('/', protect, this.add.bind(this));
-    this.router.put('/:id', protect, this.update.bind(this));
-    this.router.delete('/:id', protect, this.delete.bind(this));
+    this.router.post('/', this.add.bind(this));
+    this.router.put('/:id', this.update.bind(this));
+    this.router.delete('/:id', this.delete.bind(this));
   }
 
   /* General Functions */
@@ -135,7 +135,8 @@ class BaseCtrl {
         });
       }
     } catch (err: unknown) {
-      res.status(400).json({ success: false, msg: err as Error });
+      next(err);
+      //res.status(400).json({ success: false, msg: err as Error });
     }
   }
 }

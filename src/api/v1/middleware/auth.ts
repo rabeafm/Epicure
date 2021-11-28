@@ -1,3 +1,5 @@
+import { Response, Request, NextFunction } from 'express';
+
 import jwt from 'jsonwebtoken';
 import UserSchema from '../models/User';
 
@@ -8,16 +10,15 @@ declare var process: {
   };
 };
 
-export default async function protect(req: any, res: any, next: any) {
+export default async function protect(
+  req: any,
+  res: Response,
+  next: NextFunction
+) {
   let token;
-  if (
-    req.headers.authorization &&
-    req.headers.authorization.startsWith('Bearer ')
-  ) {
-    token = req.headers.authorization.split(' ')[1];
-  } else if (req.cookies.token) {
-      token = req.cookies.token;
-    }
+  if (req?.headers?.authorization?.startsWith('Bearer ')) {
+    token = req.headers.authorization.split(' ')?.[1];
+  }
 
   // Make sure Token Exists
   if (!token) {
@@ -29,9 +30,11 @@ export default async function protect(req: any, res: any, next: any) {
   try {
     //verify token
     const decoded: any = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = await UserSchema.findById(decoded.id);
+    const user = await UserSchema.findById(decoded.id);
+    req.user = user;
     next();
   } catch (err) {
+    //throw err;
     return res
       .status(401)
       .json({ success: false, msg: 'Not Authorized to access this route' });

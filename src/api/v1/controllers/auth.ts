@@ -16,7 +16,7 @@ class AuthCtrl extends BaseCtrl {
   handler = new AuthCRUD(UserSchema);
 
   protected initializeRoutes() {
-    this.router.get('/me', protect, this.getMe.bind(this));
+    this.router.get('/me', this.getMe.bind(this));
     this.router.post('/login', this.login.bind(this));
     this.router.post('/register', this.register.bind(this));
   }
@@ -116,6 +116,7 @@ class AuthCtrl extends BaseCtrl {
  * }
  */
   public async login(req: Request, res: Response) {
+    console.log('here');
     return await this.cookieResponder(
       this.handler.login.bind(this.handler),
       this.messages.login.success,
@@ -146,7 +147,7 @@ class AuthCtrl extends BaseCtrl {
     try {
       const data = await handler(req);
       if (!data) {
-        res.status(400).json({ success: false, msg: failuremsg });
+        res.status(401).json({ success: false, msg: failuremsg });
       } else {
         // Get Token from model, create cookie and send response
         const options = {
@@ -159,7 +160,6 @@ class AuthCtrl extends BaseCtrl {
         if (process.env.NODE_ENV === 'production') {
           options.secure = true;
         }
-
         res.status(200).json({ success: true, msg: successmsg, data: data });
       }
     } catch (err: unknown) {

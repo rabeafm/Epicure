@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 import connectDB from './config/db';
-import express from 'express';
+import express, { Response, Request, NextFunction } from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
@@ -11,7 +11,6 @@ connectDB(); // connect to database
 
 const app = express(); // run express
 app.use(cors());
-
 app.use(express.json()); // JSON parser
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser()); // Cookie parser
@@ -21,6 +20,9 @@ if (process.env.NODE_ENV === 'development') app.use(morgan('dev')); // dev logge
 const mainRoutes = new MainRoutes();
 app.use('/api', mainRoutes.router); // use main router
 
+app.use((err: any, req: Request, res: Response, next: NextFunction) =>
+  console.log(err)
+);
 const server = app.listen(process.env.PORT || 4000, () => {
   // activate server
   console.log(

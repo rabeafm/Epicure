@@ -13,13 +13,14 @@ class V1Routes {
   // Assign Routes to Controllers Routers
   private initializeRoutes() {
     // Create Instances of Main Controllers
-    // const chefctrl = new ChefCtrl();
-    // const dishctrl = new DishCtrl();
-    // const restctrl = new RestCtrl();
+    const chefctrl = new ChefCtrl();
+    const dishctrl = new DishCtrl();
+    const restctrl = new RestCtrl();
+
     // Assign Routes to Controllers Routers
-    // adminRouter.use('/chefs', chefctrl.router);
-    // adminRouter.use('/dishes', dishctrl.router);
-    // adminRouter.use('/rests', restctrl.router);
+    this.router.use('/chefs', chefctrl.router);
+    this.router.use('/dishes', dishctrl.router);
+    this.router.use('/rests', restctrl.router);
   }
 }
 

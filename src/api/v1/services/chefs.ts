@@ -6,7 +6,7 @@ import DishSchema from '../models/Dish';
 class ChefCRUD extends BaseCRUD {
   /* For Modifications */
 
-  public async getAll() {
+  public async getAll(req: any) {
     return await this.model
       .find()
       .select('-__v')
