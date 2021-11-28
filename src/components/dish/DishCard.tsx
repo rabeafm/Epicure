@@ -8,19 +8,20 @@ const DishCard = (dish: any) => {
   return (
     <>
       {showDish && <DishModal dish={dish} setShowDish={setShowDish} />}
-      <UICard onClick={() => setShowDish(true)} className="homepage-card-view">
+      <UICard onClick={() => setShowDish(true)} className="homepage-card-view dish-card-view">
         <img
           src={process.env.REACT_APP_BASE_URL + dish.image}
           alt={dish.name}
-          className="image"
+          className="card-image dish-image"
         />
-        <div className="dish-details">
+        <div className="details dish-details">
           <h1>{dish.name}</h1>
           <h4>
             {dish.ingredients.map((ing: string, i: number) =>
               i < dish.ingredients.length - 2
                 ? ing + ', '
-                : i === dish.ingredients.length - 2 && ing + ' & ' + dish.ingredients[dish.ingredients.length - 1]
+                : i === dish.ingredients.length - 2 &&
+                  ing + ' & ' + dish.ingredients[dish.ingredients.length - 1]
             )}
           </h4>
           <div>

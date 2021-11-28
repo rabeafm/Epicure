@@ -20,7 +20,7 @@ const reducer = (
       newState.restaurant = action.payload;
       break;
     case ActionType.SET_RESTAURANTS:
-      newState.restaurantsArray = action.payload;
+      newState.restaurantsArrays = action.payload;
       break;
   }
   return newState;

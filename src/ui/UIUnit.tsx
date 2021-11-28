@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 const UIUnit = styled.div`
   width: 100%;
-  margin: 0 auto;
   max-width: 1000px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,6 +19,25 @@ const UIUnit = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+  }
+  .dish-card-view {
+    .flex-ghost {
+      width: 220px !important;
+    }
+    .dish-image {
+      max-height: 150px !important;
+      min-height: 150px !important;
+    }
+    .dish-details {
+      max-height: 210px !important;
+      min-height: 210px !important;
+      h1 {
+        font-size: 25px;
+      }
+      h4 {
+        font-size: 20px;
+      }
     }
   }
 `;

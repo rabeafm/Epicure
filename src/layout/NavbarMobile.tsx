@@ -19,7 +19,7 @@ const Navbar = () => {
         />
         <NavLink to={'/'} className="logo">
           <img
-            src={process.env.REACT_APP_BASE_URL + 'assets/navbar/logo.png'}
+            src={process.env.REACT_APP_BASE_URL + 'assets/navbar/moblogo.jpg'}
             alt="Epicure"
           />
         </NavLink>
@@ -29,7 +29,7 @@ const Navbar = () => {
             <img
               src={process.env.REACT_APP_BASE_URL + 'assets/navbar/user.svg'}
               alt="User"
-              style={{ width: '20px', height: '20px' }}
+              style={{ width: '20px', height: '19px' }}
             />
           </NavLink>
           <NavLink to={'/cart'}>
@@ -47,17 +47,16 @@ const Navbar = () => {
 
 const IconsContainer = styled.div`
   padding: 8px;
-
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
+  flex-wrap: nowrap;
   align-items: center;
+  justify-content: space-between;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   .logo {
     margin-left: 45px;
     img {
-      max-width: 24px;
-      max-height: 24px;
+      width: 33px;
+      height: 33px;
     }
     @media only screen and (max-width: 230px) {
       margin-left: 25px;
@@ -67,7 +66,7 @@ const IconsContainer = styled.div`
     }
   }
   & img {
-    margin: 0 5px;
+    margin: 0 8px;
   }
   & div {
     display: flex;

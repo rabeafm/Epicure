@@ -11,10 +11,16 @@ import AboutUsContainer from '../layout/homepage/AboutUsContainer';
 import ChefsContainer from '../components/chef/ChefContainer';
 import { useSelector } from 'react-redux';
 import { AppState } from '../store/AppState';
+import { useEffect } from 'react';
 
 const Homepage = () => {
   const dishes = useSelector((state: AppState) => state.dishesArray);
-  const restaurants = useSelector((state: AppState) => state.restaurantsArray);
+  const restaurants = useSelector(
+    (state: AppState) => state.restaurantsArrays.All
+  );
+  useEffect(() => {
+    //console.log(restaurants.length);
+  }, [restaurants]);
 
   return (
     <HomeContainer>
@@ -47,16 +53,8 @@ const HomeContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media only screen and (min-width: 769px) {
-    .homepage-card-view {
-      width: 360px;
-      max-width: 26vw;
-      align-items: stretch;
-      .dish-details {
-        width: 100%;
-        align-self: center;
-      }
-    }
+  .last-section {
+    margin-bottom: 0;
   }
 `;
 

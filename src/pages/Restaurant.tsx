@@ -35,6 +35,7 @@ const Restaurant = (props: any) => {
             objectFit: 'cover',
             aspectRatio: '375 / 254',
             width: '100%',
+            maxHeight: '70vh',
           }}
         />
         <div className="resturant-display">

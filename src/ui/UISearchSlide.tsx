@@ -24,17 +24,16 @@ const UISearchSlide = () => {
 export default UISearchSlide;
 
 const SearchDiv = styled.div`
-  margin-right: 2px;
   input {
-    width: 16px;
     height: 20px;
+    width: 16px;
+    padding-left: 25px;
     background: url('${process.env
         .REACT_APP_BASE_URL}/assets/navbar/mini-search-icon.svg')
       no-repeat;
     border: 0;
     transition: width 0.7s;
     text-align: left;
-    padding-left: 25px;
     &:focus {
       width: 80px;
     }

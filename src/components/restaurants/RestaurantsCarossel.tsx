@@ -7,7 +7,10 @@ import { useSelector } from 'react-redux';
 import { AppState } from '../../store/AppState';
 
 const ResturantCarossel = () => {
-  const restaurants = useSelector((state: AppState) => state.restaurantsArray);
+  const restaurants = useSelector(
+    (state: AppState) => state.restaurantsArrays.All[0]
+  );
+
   var settings = {
     dots: false,
     infinite: true,
@@ -59,7 +62,7 @@ const ResturantCarossel = () => {
     <CarosselDev>
       <h6>THE POPULAR RESTAURANTS IN EPICURE :</h6>
       <Slider {...settings}>
-        {restaurants.slice(0, 6).map((restaurant: any) => (
+        {restaurants.data.slice(0, 6).map((restaurant: any) => (
           <RestaurantCard {...restaurant} key={restaurant._id} />
         ))}
       </Slider>

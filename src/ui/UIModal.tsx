@@ -13,6 +13,18 @@ const UIModal = styled.div`
     height: 40px;
     color: #000;
   }
+  .counter {
+    input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+  }
   @media only screen and (min-width: 768px) {
     height: 90%;
     max-width: 608px;

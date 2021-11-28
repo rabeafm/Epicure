@@ -9,10 +9,10 @@ const Navbar = () => {
         <div className="left-nav">
           <Link to={'/'} className="navbar-logo">
             <img
-              src={process.env.REACT_APP_BASE_URL + 'assets/navbar/logo.png'}
+              src={process.env.REACT_APP_BASE_URL + 'assets/navbar/moblogo.jpg'}
               alt="Epicure"
             />
-            <h4>Epicure</h4>
+            <h4>EPICURE</h4>
           </Link>
           <NavLink to={'/restaurants'} activeClassName="active">
             <h6>Restaurants</h6>
@@ -61,6 +61,9 @@ const IconsContainer = styled.div`
         max-width: 28px;
         max-height: 28px;
       }
+    }
+    h6 {
+      margin-top: 2px;
     }
     .active {
       border-bottom: rgba(222, 146, 0, 0.9) 1px solid;

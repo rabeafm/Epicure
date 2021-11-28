@@ -74,7 +74,7 @@ const DishesCarossel = () => {
       <h6>SIGNATURE DISH OF :</h6>
       <Slider className="slider" {...settings}>
         {dishes.slice(0, 6).map((dish: any) => (
-          <div key={dish._id}>
+          <div key={dish._id} className="dish-caro">
             <h5>{dish.restaurant.name}</h5>
             <DishCard className="slide" {...dish} key={dish._id} />
           </div>
@@ -97,6 +97,7 @@ const CarosselContainer = styled.div`
     display: none !important;
   }
   h5 {
+    margin-bottom: 20px;
     font-weight: 400;
   }
   .slick-slide > div {

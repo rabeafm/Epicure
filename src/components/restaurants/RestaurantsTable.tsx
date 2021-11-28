@@ -5,18 +5,22 @@ import { AppState } from '../../store/AppState';
 import { Link } from 'react-router-dom';
 
 const RestaurantTable = () => {
-  const restaurants = useSelector((state: AppState) => state.restaurantsArray);
+  const restaurants = useSelector(
+    (state: AppState) => state.restaurantsArrays.All[0]
+  );
   return (
     <UITable>
       <h3>THE POPULAR RESTAURANTS IN EPICURE:</h3>
-      <div className="inner">
-        {restaurants.slice(0, 3).map((restaurant: any) => (
+      <div className="mini-table">
+        {restaurants.data.slice(0, 3).map((restaurant: any) => (
           <RestaurantCard {...restaurant} key={restaurant._id} />
         ))}
       </div>
-      <h4 style={{ alignSelf: 'flex-end', paddingRight: '20px' }}>
-        <Link to={'restaurants'}>ALL RESTAURANTS &gt;&gt;</Link>
-      </h4>
+      <div style={{ width: '1030px', display: 'flex', justifyContent: 'end' }}>
+        <h4>
+          <Link to={'restaurants'}>ALL RESTAURANTS &gt;&gt;</Link>
+        </h4>
+      </div>
     </UITable>
   );
 };

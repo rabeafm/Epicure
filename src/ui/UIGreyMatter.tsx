@@ -16,7 +16,7 @@ const UIGreyMatter = styled.div`
   }
 
   @media only screen and (min-width: 769px) {
-    margin: 70px 0;
+    margin: 50px 0;
     padding: 25px 0;
 
     // Icons Meaning & About Us Headers

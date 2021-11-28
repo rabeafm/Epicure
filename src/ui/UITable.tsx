@@ -1,23 +1,62 @@
 import styled from 'styled-components';
 
 const UITable = styled.div`
-padding: 50px 0 50px;
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 20px;
-max-width: 1100px;
-.inner {
+  padding: 20px 0 30px;
+  width: 100%;
   display: flex;
-    gap: 10px;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+
+  .cards-grid {
+    width: 96%;
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    column-gap: 5px;
+    row-gap: 20px;
+    .flex-ghost {
+      width: 120px;
+    }
+    .dish-card-view{
+    max-height: 410px;
+    min-height: 410px;
+    background-color: #f9f4ea;
+    .dish-details {
+      background-color: #f9f4ea;
+      padding: 10px 7px;
+      max-height: 260px !important;
+      min-height: 260px !important;
+    }
+    
+  }
+  .no-dishes {
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f9f4ea;
+    border: 1px solid orange;
+    
+    
+  }
+  }
+  .mini-table {
+    display: flex;
+    gap: 30px;
   }
 
-  .unit {
-    width: 91%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+ 
+
+  .dish-details {
+    background-color: #f9f4ea;
+    padding: 10px 7px;
+    max-height: 210px;
+    min-height: 210px;
+    .icon {
+      height: 20px !important;
+      width: 20px !important;
+    }
     h1 {
       font-size: 15px;
     }
@@ -27,99 +66,79 @@ max-width: 1100px;
     p {
       font-size: 10px;
     }
-    .icon {
-      height: 20px;
-      width: 20px; 
-    }
-    .meals {
-      padding: 5px;
-      display: flex;
-      flex-flow: wrap;
-      justify-content: start;
-      gap: 10px;
-      
-      & > div {
-        max-width: 145px;
-        flex: 1
-        .dish-details {
-          background-color: #f9f4ea;
-          padding: 10px 7px;
-          max-height: 190px;
-          min-height: 190px;
-        }
-        
-        }
-      }
-    }
-    .seperator {
-      width: 100%;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      .lines {
-        height: 0.8px !important;
-        display: inline-flex;
-        flex: 1;
-        margin: 10px;
-        background-color: #979797;
-      }
-    }
   }
 
   @media only screen and (min-width: 769px) {
-    h4 {
-      font-weight: 400;
+    max-width: 1100px;
+
+    // Restaurant Dishes Table
+    .cards-grid {
+      .dish-card-view {
+        max-width: 220px !important;
+        min-width: 220px !important;
+        max-height: 360px;
+        min-height: 360px;
+        .dish-image{
+        max-width: 220px !important;
+        min-width: 220px !important;
+        }
+        .dish-details {
+          max-height: 210px !important;
+        min-height: 210px !important;
+          .icon {
+            display: none !important;
+          }
+
+        }
+        
+      }
+      .dishes-ghost {
+        width: 220px;
+      }
     }
-    .chefsrest {
-      align-self: start !important;
-    }
+    
   
-    .inner {
-      > div > h3 {
+    // Mini Tables at first page
+    .mini-table {
+      // for signature dish of restaurant name
+      .dish-restaurant {
         margin: 15px;
         font-weight: 400;
       }
+
+      .dish-details {
+        padding: 15px 15px;
+        min-height: 330px;
+        max-height: 330px;
+        min-width: 280px;
+        max-width: 360px;
+      h1 {
+        font-size: 35px; 
+      }
       h4 {
+        font-size: 24px;
         font-weight: 200;
       }
-      max-width: 1100px;
-      align-self: center !important;
-    }
-  
-    .unit{ 
-      width: 100%;
-    .meals {
-      width: 100%;
-      gap: 30px;
-    > div { 
-      max-width: 220px !important;
-      min-width: 220px !important;
-      
-    }
-    .dish-details {
-      max-width: 220px !important;
-      min-width: 220px !important;
-      .icon {
-        display: none;
-      }
-      h1{
-        font-size: 20px;
-      }
-      h4{
-        font-size: 18px;
-        font-weight: 200;
-      }
-      }
-    }}}
-    .chefsrest {
-      max-width: 900px;
-      padding-left: 5px;
-    }
-    .chefs-restaurant {
-      max-width: 900px;
-      justify-self: center;
     }
   }
+  .chefsrest {
+    margin: 0 auto;
+    max-width: 880px;
+    width: 100%;
+    display: flex;
+    justify-self: center;
+    justify-content: start;
+  }
+ .chefs-restaurant {
+   width: 100%;
+   padding: 0 10px;
+   max-width: 900px;
+   justify-self: start;
+   .chef-rests{
+     max-width: 280px;
+     min-width: 280px;
+   }
+ }
 `;
 
 export default UITable;

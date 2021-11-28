@@ -3,7 +3,7 @@ import UIGreyMatter from '../../ui/UIGreyMatter';
 
 const AboutUsContainer = () => {
   return (
-    <UIGreyMatter>
+    <UIGreyMatter className="last-section">
       <AboutContainer>
         <h6>ABOUT US :</h6>
         <div className="about-us">
@@ -94,12 +94,14 @@ const AboutContainer = styled.div`
 
   // Desktop Design
   @media only screen and (min-width: 769px) {
-    padding: 0 10px;
+    padding: 20px 10px;
     width: 100%;
     max-width: 900px;
     align-items: start;
 
     .about-us {
+      margin: 0;
+      padding: 10px 0;
       width: 95%;
       display: flex;
       align-items: center;

@@ -3,7 +3,7 @@ import UICard from '../../ui/UICard';
 
 const RestaurantCard = (restaurant: any) => {
   return (
-    <UICard className="homepage-card-view">
+    <UICard className="chef-rests">
       <Link
         to={'/restaurant/' + restaurant._id}
         style={{
@@ -15,10 +15,10 @@ const RestaurantCard = (restaurant: any) => {
         <img
           src={process.env.REACT_APP_BASE_URL + restaurant.thumb}
           alt={restaurant.name}
-          className="image"
+          className="card-image rest-image"
         />
 
-        <div className="rest-details">
+        <div className="details rest-details">
           <h2>{restaurant.name}</h2>
           <h3>{restaurant.chef.name}</h3>
         </div>

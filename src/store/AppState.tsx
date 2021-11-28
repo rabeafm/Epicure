@@ -3,7 +3,7 @@ export class AppState {
   public restaurant: any = null;
   public chefsArray: any = [];
   public dishesArray: any = [];
-  public restaurantsArray: any = [];
+  public restaurantsArrays: any = { All: [], New: [], Popular: [], Open: [] };
 }
 //   public chef: any = {
 //     _id: 1,

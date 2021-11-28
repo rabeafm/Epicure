@@ -9,10 +9,10 @@ const DishesTable = () => {
   return (
     <UITable>
       <h3>SIGNATURE DISH OF:</h3>
-      <div className="inner">
+      <div className="mini-table">
         {dishes.slice(0, 3).map((dish: any) => (
           <div key={dish._id}>
-            <h3>{dish.restaurant.name}</h3>
+            <h3 className="dish-restaurant">{dish.restaurant.name}</h3>
             <DishCard {...dish} key={dish._id} />
           </div>
         ))}

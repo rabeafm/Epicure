@@ -57,7 +57,11 @@ const ChefDev = styled.div`
       opacity: 0.8;
     }
   }
+  .chefsrest {
+    align-self: start !important;
+  }
   p {
+    margin: auto;
     padding: 0px 16px;
     width: 90%;
   }
